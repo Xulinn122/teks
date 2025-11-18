@@ -51,7 +51,7 @@ if (!Array.isArray(dados.items) || dados.items.length < 1) {
     // --- 3. Retornar na sua API ---
     return res.status(200).json({
       sucesso: true,
-      fonte: "MDZ (via proxy FVV API)",
+      fonte: "Xuslin",
       resultado: traduzido
     });
 
