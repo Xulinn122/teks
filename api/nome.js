@@ -11,9 +11,9 @@ export default async function handler(req, res) {
     const resposta = await fetch(apiURL);
     const dados = await resposta.json();
 
-    if (!dados.items || dados.items.length === 0) {
-      return res.status(404).json({ erro: "Nenhum resultado encontrado." });
-    }
+if (!Array.isArray(dados.items) || dados.items.length < 1) {
+  return res.status(404).json({ erro: "Nenhum resultado encontrado (items vazio)." });
+}
 
     const item = dados.items[0];
 
